@@ -4,13 +4,16 @@ import logging
 import os
 from PIL import Image
 import tempfile
-from resizeimage import resizeimage
 from . import google_images_download
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, Warning
 
 
 _logger = logging.getLogger(__name__)
+try:
+    from resizeimage import resizeimage
+except Exception as e:
+    _logger.exception('Cannot import resizeimage, please install it to use this module')
 
 
 class ProductImageSelection(models.TransientModel):
