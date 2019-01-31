@@ -118,9 +118,9 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Gift Voucher" id="gift_voucher" action="action_gift_voucher" parent="sale.menu_sale_config"/>
-        <menuitem name="Gift Coupons" id="gift_coupon_main" parent="sale.sale_menu_root"
-                  sequence="5" />
-        <menuitem name="Gift Coupon" id="gift_coupon" action="action_gift_coupon" parent="gift_coupon_main"/>
+        <menuitem name="Gift Voucher" id="gift_voucher" action="action_gift_voucher" groups="sales_team.group_sale_salesman" parent="sale.menu_sale_config"/>
+        <menuitem name="Gift Coupons" id="gift_coupon_main" parent="sale.sale_menu_root" sequence="5" />
+        <menuitem name="Gift Coupon" id="gift_coupon" action="action_gift_coupon" parent="gift_coupon_main" groups="sales_team.group_sale_salesman"/>
+
     </data>
 </odoo>
